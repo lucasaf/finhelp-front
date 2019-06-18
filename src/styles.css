@@ -1,27 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    background-color: #aaaaaa;;
-}
-
-input.form-control,input.form-control:focus{
-    background-color: #ffc107;
-    color: black;
-    border-color: black;
-    border-radius: 0px;
-    border-width: 2px;
+    background-color: #d3d2d2;
 }
 
 input.form-control:focus{
     box-shadow: none;
     border-bottom-color: black;
 }
-
-button[type=submit].btn{
-    border-radius: 20px;
-    background-color: #000;
-    color: #fff;
-}
-
 div.form-group label{
     color: black;
     font-weight: bold;
