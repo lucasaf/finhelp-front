@@ -13,4 +13,12 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.service.register().subscribe(
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
 }
