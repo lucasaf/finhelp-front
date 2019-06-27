@@ -6,55 +6,40 @@
 
     <div class="row">
       <div class="col-md-12 order-md-1">
-        <form [formGroup]="service.formModel" class="needs-validation" autocomplete="off">
-          <div class="row">
-            <div class="col-md-12 mb-3 form-group">
-              <label for="fullName">Nome Completo</label>
-              <input type="text" class="form-control" id="fullName" placeholder="Nome Completo" formControlName="FullName">
-              <div class="invalid-feedback">
-                O nome é obrigatório.
-              </div>
+        <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+            <div class="form-group required">
+                <label>Usuário</label>
+                <input class="form-control" formControlName="UserName">
+                <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">Preenchimento obrigatório.</label>
             </div>
-          </div>
-
-          <div class="mb-3 form-group required">
-            <label for="username">Usuário</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">@</span>
-              </div>
-              <input type="text" class="form-control" id="username" placeholder="Usuário" formControlName="UserName">
-              <div class="invalid-feedback" style="width: 100%;">
-                O usuário é obrigatório.
-              </div>
+            <div class="form-group">
+                <label>E-mail</label>
+                <input class="form-control" formControlName="Email">
+                <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Endereço de e-mail inválido.</label>
             </div>
-          </div>
-
-          <div class="mb-3 form-group required">
-            <label for="email">E-mail</label>
-            <input type="email" class="form-control" id="email" placeholder="voce@exemplo.com" formControlName="Email">
-            <div class="invalid-feedback">
-              Entre com um email válido
+            <div class="form-group">
+                <label>Nome Completo</label>
+                <input class="form-control" formControlName="FullName">
             </div>
-          </div>
-          <div formGroupName="Passwords">
-            <div class="mb-3 form-group required">
-                <label for="username">Senha</label>
-                <input type="text" class="form-control" id="password" placeholder="Senha" formControlName="Password">
-                <div class="invalid-feedback" style="width: 100%;">
-                    A senha é obrigatória.
+            <div formGroupName="Passwords">
+                <div class="form-group required">
+                <label>Senha</label>
+                <input type="password" class="form-control" formControlName="Password">
+                <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">Preenchimento obrigatório.</label>
+                <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">No minímo 4 caracteres.</label>
+                </div>
+                <div class="form-group required">
+                <label>Confirmar Senha</label>
+                <input type="password" class="form-control" formControlName="ConfirmPassword">
+                <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">Preenchimento obrigatório.</label>
+                <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">A confirmação está incorreta.</label>
                 </div>
             </div>
-            <div class="mb-3 form-group">
-                <label for="username">Confirmar Senha</label>
-                <input type="text" class="form-control" id="confirm_password" placeholder="Confirmar Senha" formControlName="ConfirmPassword">
-                <div class="invalid-feedback" style="width: 100%;">
-                    A senha é obrigatória.
+            <div class="form-row">
+                <div class="form-group col-md-4 offset-md-4">
+                <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!service.formModel.valid">Cadastrar</button>
                 </div>
             </div>
-          </div>
-          <hr class="col-md-6 mb-4">
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
         </form>
       </div>
     </div>
