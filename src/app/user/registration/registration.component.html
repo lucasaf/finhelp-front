@@ -8,33 +8,49 @@
       <div class="col-md-12 order-md-1">
         <form [formGroup]="service.formModel" class="needs-validation" autocomplete="off">
           <div class="row">
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 mb-3 form-group">
               <label for="fullName">Nome Completo</label>
-              <input type="text" class="form-control" id="fullName" placeholder="Nome Completo" formControlName="UserName">
+              <input type="text" class="form-control" id="fullName" placeholder="Nome Completo" formControlName="FullName">
               <div class="invalid-feedback">
                 O nome é obrigatório.
               </div>
             </div>
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3 form-group required">
             <label for="username">Usuário</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">@</span>
               </div>
-              <input type="text" class="form-control" id="username" placeholder="Usuário" required>
+              <input type="text" class="form-control" id="username" placeholder="Usuário" formControlName="UserName">
               <div class="invalid-feedback" style="width: 100%;">
                 O usuário é obrigatório.
               </div>
             </div>
           </div>
 
-          <div class="mb-3">
-            <label for="email">E-mail <span class="text-muted">(Opcional)</span></label>
-            <input type="email" class="form-control" id="email" placeholder="voce@exemplo.com">
+          <div class="mb-3 form-group required">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="voce@exemplo.com" formControlName="Email">
             <div class="invalid-feedback">
               Entre com um email válido
+            </div>
+          </div>
+          <div formGroupName="Passwords">
+            <div class="mb-3 form-group required">
+                <label for="username">Senha</label>
+                <input type="text" class="form-control" id="password" placeholder="Senha" formControlName="Password">
+                <div class="invalid-feedback" style="width: 100%;">
+                    A senha é obrigatória.
+                </div>
+            </div>
+            <div class="mb-3 form-group">
+                <label for="username">Confirmar Senha</label>
+                <input type="text" class="form-control" id="confirm_password" placeholder="Confirmar Senha" formControlName="ConfirmPassword">
+                <div class="invalid-feedback" style="width: 100%;">
+                    A senha é obrigatória.
+                </div>
             </div>
           </div>
           <hr class="col-md-6 mb-4">
