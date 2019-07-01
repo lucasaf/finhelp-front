@@ -1,5 +1,21 @@
-<div class="container">
-  <div class="col-md-8 offset-md-2">
-    <router-outlet></router-outlet>
+<div class="wrapper">
+  <div class="wrapperd-div">
+    <div class="tab-header">
+        <div class="container">
+			<div class="row text-right">
+				<div class="col-11">  
+					<h4 routerLink='/user/login' routerLinkActive="active">Entrar</h4>
+				</div>
+				<div class="col-1">
+					<h4 routerLink='/user/registration' routerLinkActive="active">Registrar</h4>
+				</div>
+			</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
 </div>
