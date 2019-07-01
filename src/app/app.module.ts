@@ -9,7 +9,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { UserService } from './shared/user.service';
 import { LoginComponent } from './user/login/login.component';
 
@@ -26,7 +26,10 @@ import { LoginComponent } from './user/login/login.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      progressBar: true
+    }),
+    FormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
