@@ -10,13 +10,29 @@ import { Router } from '@angular/router';
   styles: []
 })
 export class LoginComponent implements OnInit {
-  formModel= {
+  formModel = {
     UserName : '',
     Password : ''
   }
-  constructor() { }
+  constructor(private service: UserService, private router: Router, private toast : ToastrService) { }
 
   ngOnInit() {
+    if(localStorage.getItem('token')!=null)
+      this.router.navigateByUrl('/home');
   }
 
+  onSubmit(form:NgForm){
+    this.service.login(form.value).subscribe(
+      (res:any) =>{
+        localStorage.setItem('token', res.token);
+        this.router.navigateByUrl('/home');
+      },
+      err =>{
+        if(err.status == 400)
+          this.toast.error('Usuário ou senha incorretos.','Erro de Autenticação');
+        else
+          console.log(err);
+      }
+    );
+  }
 }

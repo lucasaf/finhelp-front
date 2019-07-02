@@ -5,7 +5,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12 order-md-1">
-				<form #form='ngForm' class="mb-4" autocomplete="off">
+				<form #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
 					<div class="form-group">
 						<label>Usuário</label>
 						<input class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" required>

@@ -1,0 +1,23 @@
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+  <a class="navbar-brand col-sm-3 col-md-9 mr-0" href="#">Finhelp!</a>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Pesquisar" aria-label="Pesquisar">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link"(click)="onLogout()">Sair</a>
+    </li>
+  </ul>
+</nav>
+<div class="card m-5" style="width:18rem" *ngIf="userDetails">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <strong>Usuário : </strong>{{userDetails.userName}}
+    </li>
+    <li class="list-group-item">
+      <strong>Nome : </strong>{{userDetails.fullName}}
+    </li>
+    <li class="list-group-item">
+      <strong>E-mail : </strong>{{userDetails.email}}
+    </li>
+  </ul>
+
+</div>
