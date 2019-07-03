@@ -14,6 +14,9 @@ import { UserService } from './shared/user.service';
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { CategoriesComponent } from './categories/categories.component';
+import { CategoryComponent } from './categories/category/category.component';
+import { ListComponent } from './categories/list/list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     UserComponent,
     RegistrationComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    CategoriesComponent,
+    CategoryComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
