@@ -1,7 +1,7 @@
 <div class="row mt-4">
 	<div class="container">
 		<div class="text-center">
-		<h2>Acesse a sua conta</h2>
+			<h2>Acesse a sua conta</h2>
 		</div>
 		<div class="row">
 			<div class="col-md-12 order-md-1">
@@ -12,14 +12,15 @@
 					</div>
 					<div class="form-group">
 						<label>Senha</label>
-						<input type="password" class="form-control" #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" required>
+						<input type="password" class="form-control" #Password="ngModel" name="Password"
+							[(ngModel)]="formModel.Password" required>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-md-4 offset-2">
 							<button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid">Entrar</button>
 						</div>
 						<div class="form-group col-md-4">
-							<button type="submit" class="btn btn-success btn-block" routerLink='/user/registration' routerLinkActive="active">Cadastrar</button>
+							<button type="submit" class="btn btn-secondary btn-block" routerLink='/user/registration' routerLinkActive="active">Cadastrar</button>
 						</div>
 					</div>
 				</form>
