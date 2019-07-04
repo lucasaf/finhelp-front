@@ -1,3 +1,10 @@
-<p>
-  category works!
-</p>
+<div>
+    <form #form="ngForm" autocomplete="off">
+        <div class="form-group">
+            <input name="description" class="form-control" #description="ngModel" [(ngModel)]="service.description">
+        </div>
+        <div class="form-group">
+            <input type="checkbox" [(ngModel)]="isChecked" [checked]="service.status">
+        </div>
+    </form>    
+</div>

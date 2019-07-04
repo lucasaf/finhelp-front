@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
- 
+
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './categories/category/category.component';
 import { ListComponent } from './categories/list/list.component';
+import { CategoryService } from './shared/category.service';
 
 @NgModule({
   declarations: [
@@ -40,11 +41,12 @@ import { ListComponent } from './categories/list/list.component';
     }),
     FormsModule
   ],
-  providers: [UserService, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true
-  }],
+  providers: [CategoryService, 
+    UserService, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
