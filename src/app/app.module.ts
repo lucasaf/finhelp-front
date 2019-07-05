@@ -18,6 +18,9 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './categories/category/category.component';
 import { ListComponent } from './categories/list/list.component';
 import { CategoryService } from './shared/category.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { FooterbarComponent } from './footerbar/footerbar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { CategoryService } from './shared/category.service';
     HomeComponent,
     CategoriesComponent,
     CategoryComponent,
-    ListComponent
+    ListComponent,
+    NavbarComponent,
+    SidebarComponent,
+    FooterbarComponent
   ],
   imports: [
     BrowserModule,

@@ -3,27 +3,20 @@ import { Router } from '@angular/router';
 import { UserService } from '../shared/user.service';
 
 @Component({
-	selector: 'app-home',
-	templateUrl: './home.component.html',
+	selector: 'app-navbar',
+	templateUrl: './navbar.component.html',
 	styles: []
 })
-export class HomeComponent implements OnInit {
-	userDetails;
+export class NavbarComponent implements OnInit {
+
 	constructor(private router: Router, private service: UserService) { }
 
 	ngOnInit() {
-		this.service.getUserProfile().subscribe(
-			res => {
-				this.userDetails = res;
-			},
-			err => {
-				console.log(err);
-			}
-		)
 	}
 
 	onLogout() {
 		localStorage.removeItem('token');
 		this.router.navigate(['/user/login'])
 	}
+
 }

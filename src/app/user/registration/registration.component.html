@@ -7,18 +7,18 @@
             <div class="col-md-12 order-md-1">
                 <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
                     <div class="form-group required">
-                        <label>Usuário</label>
+                        <label for="UserName">Usuário</label>
                         <input class="form-control" formControlName="UserName">
-                        <label class="text-danger"
+                        <span class="text-danger"
                             *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">Preenchimento
-                            obrigatório.</label>
+                            obrigatório.</span>
                     </div>
                     <div class="form-group">
                         <label>E-mail</label>
                         <input class="form-control" formControlName="Email">
-                        <label class="text-danger"
+                        <span class="text-danger"
                             *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Endereço
-                            de e-mail inválido.</label>
+                            de e-mail inválido.</span>
                     </div>
                     <div class="form-group">
                         <label>Nome Completo</label>
@@ -28,22 +28,22 @@
                         <div class="form-group required">
                             <label>Senha</label>
                             <input type="password" class="form-control" formControlName="Password">
-                            <label class="text-danger"
+                            <span class="text-danger"
                                 *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">Preenchimento
-                                obrigatório.</label>
-                            <label class="text-danger"
+                                obrigatório.</span>
+                            <span class="text-danger"
                                 *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">No
-                                minímo 4 caracteres.</label>
+                                minímo 4 caracteres.</span>
                         </div>
                         <div class="form-group required">
                             <label>Confirmar Senha</label>
                             <input type="password" class="form-control" formControlName="ConfirmPassword">
-                            <label class="text-danger"
+                            <span class="text-danger"
                                 *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">Preenchimento
-                                obrigatório.</label>
-                            <label class="text-danger"
+                                obrigatório.</span>
+                            <span class="text-danger"
                                 *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">A
-                                confirmação está incorreta.</label>
+                                confirmação está incorreta.</span>
                         </div>
                     </div>
                     <div class="form-row">
