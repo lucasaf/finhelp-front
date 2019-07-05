@@ -8,21 +8,22 @@ import { AuthGuard } from './auth/auth.guard';
 import { CategoriesComponent } from './categories/categories.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  {
-    path: 'user', component: UserComponent,
-    children: [
-      { path: 'registration', component: RegistrationComponent },
-      { path: 'login', component: LoginComponent }
-    ]
-  },
-  { path: 'home', component: HomeComponent, canActivate:[AuthGuard] },
-  { path: 'categories', component: CategoriesComponent }
+	{ path: '', redirectTo: 'home', pathMatch: 'full' },
+	{
+		path: 'user', component: UserComponent,
+		children: [
+			{ path: 'registration', component: RegistrationComponent },
+			{ path: 'login', component: LoginComponent }
+		]
+	},
+	{ path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+	{ path: 'categories', component: CategoriesComponent },
+	{ path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
 
 export class AppRoutingModule { }

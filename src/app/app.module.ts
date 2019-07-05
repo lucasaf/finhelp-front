@@ -21,6 +21,7 @@ import { CategoryService } from './shared/category.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterbarComponent } from './footerbar/footerbar.component';
+import { BaseComponent } from './base/base.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FooterbarComponent } from './footerbar/footerbar.component';
     ListComponent,
     NavbarComponent,
     SidebarComponent,
-    FooterbarComponent
+    FooterbarComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,
