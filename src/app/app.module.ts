@@ -12,7 +12,7 @@ import { UserComponent } from './user/user.component';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { UserService } from './shared/user.service';
 import { LoginComponent } from './user/login/login.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from "./home/home.component";
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './categories/category/category.component';

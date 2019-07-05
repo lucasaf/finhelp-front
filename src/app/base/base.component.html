@@ -1,3 +1,14 @@
-<p>
-  base works!
-</p>
+<div class="wrapper">
+	<div class="sidebar" data-color="red" data-image="">
+		<app-navbar></app-navbar>
+		<div class="sidebar-background" style="background-image: url(assets/img/sidebar-5.jpg)"></div>
+	</div>
+
+	<div class="main-panel">
+		<app-sidebar></app-sidebar>
+		<router-outlet></router-outlet>
+		<div>
+			<app-footerbar></app-footerbar>
+		</div>
+	</div>
+</div>
