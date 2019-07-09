@@ -9,6 +9,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { BaseComponent } from './base/base.component';
 
 const routes: Routes = [
+	{ path: '', redirectTo: 'home', pathMatch: 'full' },
 	{
 		path: 'user', component: UserComponent,
 		children: [
@@ -16,7 +17,9 @@ const routes: Routes = [
 			{ path: 'login', component: LoginComponent }
 		]
 	},
-	{ path: 'base', component: BaseComponent, canActivate: [AuthGuard] }
+	{ path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+	{ path: 'categories', component: CategoriesComponent, canActivate: [AuthGuard]  },
+	{ path: '**', component: HomeComponent },
 ];
 
 @NgModule({
