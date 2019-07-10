@@ -1,10 +1,22 @@
-<div>
-    <form #form="ngForm" autocomplete="off">
-        <div class="form-group">
-            <input name="description" class="form-control" #description="ngModel" [(ngModel)]="service.description">
+<div class="row mt-4">
+    <div class="container">
+        <div class="col-md-12 order-md-1">
+            <form #form="ngForm" autocomplete="off">
+                <div class="form-row">
+                    <div class="form-group col-10">
+                        <input name="description" class="form-control" placeholder="Descrição" #description="ngModel"
+                            [(ngModel)]="service.description" required>
+                    </div>
+                    <div class="form-group col-2">
+                        <input type="checkbox" [(ngModel)]="isChecked" [checked]="service.status"> Status
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12 text-center">
+                        <button class="btn btn-success" type="submit" [disabled]="form.isvalid">Inserir</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <input type="checkbox" [(ngModel)]="isChecked" [checked]="service.status">
-        </div>
-    </form>    
+    </div>
 </div>

@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { UserService } from './../../shared/user.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'app-login',
@@ -14,6 +15,9 @@ export class LoginComponent implements OnInit {
 		UserName: '',
 		Password: ''
 	}
+
+	public currentUser: Observable<UserService>;
+
 	constructor(private service: UserService, private router: Router, private toast: ToastrService) { }
 
 	ngOnInit() {
@@ -25,7 +29,8 @@ export class LoginComponent implements OnInit {
 		this.service.login(form.value).subscribe(
 			(res: any) => {
 				localStorage.setItem('token', res.token);
-				this.router.navigateByUrl('/home');
+				document.location.reload(true);
+				//this.router.navigateByUrl('/home');
 			},
 			err => {
 				if (err.status == 400)

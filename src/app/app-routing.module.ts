@@ -6,7 +6,6 @@ import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from "./home/home.component";
 import { AuthGuard } from './auth/auth.guard';
 import { CategoriesComponent } from './categories/categories.component';
-import { BaseComponent } from './base/base.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
